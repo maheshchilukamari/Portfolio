@@ -9,6 +9,9 @@
         #form{
             background-color: cyan;
         }
+        #college{
+            font-size: medium;
+        }
     </style>
 </head>
  
@@ -54,13 +57,13 @@
         </tr>
     </table>
     
-    <form  action="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTLGXrxrGsxJGjnthQcjRrFLzQrGHGxdPdGtTRJCCdCLLrVKTxJKgprjFwKSJgCrWsRHQB" id="form">
+    <form   id="form">
         <div >
          <h1>Contact US</h1>
          <hr>   
       <h1>
           <label for="name"><b>Name</b></label>
-          <input type="text" placeholder="Enter Your Name" name="name" id="name" required><br>
+          <input type="text" placeholder="Enter Your Name" name="name" id="name"  required><br>
           <br>
       
           <label for="psw"><b>Email</b></label>
@@ -72,16 +75,36 @@
           <input type="tel" placeholder="Cell No" name="number" id="number" required><br>
           <br>
 
-        
-          <label for="test"><b>Message</b></label>
-          <textarea cols="20" rows="5" value="address"></textarea>
+          
+          <label for="college" ><b>College</b></label><br>
+          <input type="radio" name="KMIT" id="college"/>KMIT<br>
+          <input type="radio" name="NGIT"id="college" />NGT<br>
+          <input type="radio" name="KMEC" id="college" />KMEC<br>
+          <br>
 
-          <button type="Submit">
+          
+
+        
+          <label for="text"><b>Message</b></label>
+          <textarea cols="20" rows="5" value="address"></textarea>
+          <button type="submit" >
             <font face="Verdana"
-                size="4" color="black">
-                <b>Submit</b>
+            size="4" color="black">
+            <b>Submit</b>
+    
+    
             </font>
         </button>
+
+          <button type="emailus" formaction="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTLGXrxrGsxJGjnthQcjRrFLzQrGHGxdPdGtTRJCCdCLLrVKTxJKgprjFwKSJgCrWsRHQB">
+            <font face="Verdana"
+                size="4" color="black">
+                <b>Feedback</b>
+            </font>
+
+    
+        </button>
+        
           
         </div>
         </h1>
