@@ -2,6 +2,8 @@
 
 Responsive, buildless HTML/CSS/JavaScript portfolio for GitHub Pages. The site presents Azure data engineering experience, a reproducible Python/SQL ETL project, supporting projects, education, and PDF-listed credentials.
 
+The opening section highlights Mahesh's current HCLTech role, Azure stack, completed UNT master's degree, and documented HCLTech/HDFC results. The current design uses a light background with deep green accents. CSS and JavaScript URLs include a release version so browsers request updated assets after publication.
+
 ## Repository relationship
 
 - `maheshchilukamari/Portfolio` hosts this website at [maheshchilukamari.github.io/Portfolio](https://maheshchilukamari.github.io/Portfolio/).
