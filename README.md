@@ -1,102 +1,41 @@
-# Mahesh Chilukamari Portfolio
+# Mahesh Chilukamari | Data Engineer Portfolio
 
-A complete modern portfolio website for **Mahesh Chilukamari**, built as a responsive static site for GitHub Pages.
+Responsive, buildless HTML/CSS/JavaScript portfolio for GitHub Pages. The site presents Azure data engineering experience, a reproducible Python/SQL ETL project, supporting projects, education, and PDF-listed credentials.
 
-## Folder Structure
+## Repository relationship
 
-```text
-portfolio/
-├── index.html
-├── style.css
-├── script.js
-├── README.md
-└── assets/
-    ├── profile.png
-    └── RESUME.pdf
-```
+- `maheshchilukamari/Portfolio` hosts this website at [maheshchilukamari.github.io/Portfolio](https://maheshchilukamari.github.io/Portfolio/).
+- `maheshchilukamari/maheshchilukamari` controls the separate GitHub profile README. Updating one repository does not update the other.
 
-## Sections
+## Edit and preview
 
-- Home
-- About
-- Skills
-- Projects
-- Experience
-- My Journey
-- Education
-- Certifications
-- Contact
+- `index.html`: all visible content, navigation, contact links, and SEO/social metadata.
+- `style.css`: responsive layout, colors, focus styles, and reduced-motion support.
+- `script.js`: navigation, active sections, reveal observer, current year, and EmailJS contact behavior.
+- `assets/profile.png`: existing portrait.
+- `assets/RESUME.pdf`: legacy resume, retained but deliberately unlinked because it conflicts with the supplied current profile. Replace it with an approved current resume before restoring a resume download.
 
-## Features
+No package install, bundler, or compilation is required. From the repository root, run:
 
-- Dark modern professional theme
-- Pink/red and orange accent palette
-- Responsive layout
-- Sticky navbar
-- Smooth scrolling
-- Animated hero section
-- Scroll reveal effects
-- Vertical timeline animation for My Journey
-- Project cards with tech stack badges
-- EmailJS-powered contact form with sending, success, and error states
-- Font Awesome icons
-- Google Fonts
-
-## Replace Placeholders
-
-1. Replace the general GitHub profile links on each project card with the matching repository URLs.
-2. Replace the `#` live demo links in `index.html` with real demo URLs.
-
-## Enable Direct Contact Form Emails
-
-The form is integrated with EmailJS. Complete these steps once to send messages directly to your inbox:
-
-1. Create an account at [EmailJS](https://www.emailjs.com/).
-2. In **Email Services**, connect Gmail or another email provider and copy the **Service ID**.
-3. In **Email Templates**, create a contact template and copy the **Template ID**.
-4. Set the template's **To Email** to `mahesh.chilukamari0901@gmail.com`.
-5. Use these template variables:
-
-```text
-Sender name: {{from_name}}
-Sender email: {{reply_to}}
-Message: {{message}}
-```
-
-6. Set the template's **Reply-To** field to `{{reply_to}}`.
-7. Copy the **Public Key** from the EmailJS Account page.
-8. Open `script.js` and replace:
-
-```js
-const EMAILJS_CONFIG = {
-  serviceId: "YOUR_SERVICE_ID",
-  templateId: "YOUR_TEMPLATE_ID",
-  publicKey: "YOUR_PUBLIC_KEY"
-};
-```
-
-Only use the EmailJS Public Key in frontend code. Do not add a private key.
-
-## GitHub Pages Deployment
-
-1. Create a new GitHub repository.
-2. Upload `index.html`, `style.css`, `script.js`, `README.md`, and the `assets` folder to the repository root.
-3. Go to **Settings > Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select the `main` branch and `/root` folder.
-6. Click **Save**.
-7. Open the generated GitHub Pages URL after deployment completes.
-
-## Local Preview
-
-Open `index.html` in a browser, or run a simple local server:
-
-```bash
+```sh
 python -m http.server 8000
 ```
 
-Then visit:
+Open [localhost:8000](http://localhost:8000). External Google Fonts, Font Awesome, and the EmailJS SDK require network access. Body text remains visible without JavaScript.
 
-```text
-http://localhost:8000
-```
+## Contact form
+
+The existing public EmailJS service ID, template ID, and public key remain in `script.js`. No private key belongs in this repository. The published email links now use `mahesh.chilukamari13@gmail.com`, the address in the supplied profile.
+
+Before publishing, check the existing EmailJS template's **To Email** in your dashboard: the template recipient cannot be verified from this repository. It must route to the intended inbox. Template fields are `from_name`, `reply_to`, and `message`. No test email was sent during this audit. The direct email link works independently of EmailJS.
+
+## Publish through GitHub Pages
+
+1. Review the local diff and the accompanying audit report.
+2. Create a feature branch, commit `index.html`, `style.css`, `script.js`, and this README, and push that branch when ready.
+3. Open and merge a pull request into this repository's publishing branch.
+4. In **Settings → Pages**, preserve the existing publishing source. For the original buildless layout, the branch source is normally `main` and `/ (root)`; verify the actual setting before changing it. There is no tracked custom deployment workflow in this checkout.
+5. Wait for the Pages deployment to complete, then check the live website, mobile navigation, project links, and contact route.
+
+Publish the profile README separately in `maheshchilukamari/maheshchilukamari`. Its optional contribution-snake workflow publishes to `output`; that branch is unrelated to this website.
+

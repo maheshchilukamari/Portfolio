@@ -20,6 +20,7 @@ navToggle.addEventListener("click", () => {
   const isOpen = navMenu.classList.toggle("open");
   document.body.classList.toggle("nav-open", isOpen);
   navToggle.setAttribute("aria-expanded", String(isOpen));
+  navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
   navToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
 });
 
@@ -28,6 +29,7 @@ navLinks.forEach((link) => {
     navMenu.classList.remove("open");
     document.body.classList.remove("nav-open");
     navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Open navigation");
     navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
   });
 });
@@ -113,5 +115,26 @@ contactForm.addEventListener("submit", async (event) => {
   } finally {
     contactButton.disabled = false;
     contactButton.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+  }
+});
+
+// Escape closes mobile navigation and restores focus to its toggle.
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && navMenu.classList.contains("open")) {
+    navMenu.classList.remove("open");
+    document.body.classList.remove("nav-open");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Open navigation");
+    navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    navToggle.focus();
+  }
+});
+window.matchMedia("(min-width: 1041px)").addEventListener("change", (event) => {
+  if (event.matches) {
+    navMenu.classList.remove("open");
+    document.body.classList.remove("nav-open");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Open navigation");
+    navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
   }
 });
